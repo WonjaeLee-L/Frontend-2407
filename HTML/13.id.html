@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id</title>
+    <style>
+        #myHeader {
+            background-color: lightblue;
+            color: black;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function changetext() {
+            document.getElementById('myHeader').innerHTML = 'Have a nice day!!!';
+        }
+    </script>   <!--id값이 myHeader인 애를 찾아서 내부글자innerHTML를 Have a nice day로 바꿔라 -->
+                <!-- 스타일 지정때는(class사용) id값 안쓰고, 북마크역할이나 동적인것 수행할때 함-->
+</head>
+<body style="margin: 40px;">
+    <h1 id="myHeader">my Header</h1>
+    <a href="#C4">Jump to Chater 4</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2 id="C4">Chapter 4</h2>
+    <button onclick="changetext()">헤더 내용 바꾸기</button>
+</body>
+</html>
