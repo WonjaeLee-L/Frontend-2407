@@ -10,23 +10,23 @@
 </head>
 <body style="margin: 40px;">
     <form action="#" method="get">
-        <label for="uame">User name</label><br>
-        <input type="text" name="unmae" id="uname"><br><br>
-        <label for="pwd">패스워드</label><br>
-        <input type="password" id="pwd"><br><br>
+        <label for="uame">User name</label><br> <!-- action은 서버에서 내 프로그램을 처리해줄 내용 들어감-->
+        <input type="text" name="unmae" id="uname" placeholder="uname을 입력하세요" required><br><br>
+        <label for="pwd">패스워드</label><br>   <!-- placeholder 중요! 사용자에게만 보여지는 내용-->
+        <input type="password" id="pwd" size="30"><br><br>
         <label for="tel">전화번호</label><br>
-        <input type="tel" id="tel"><br><br>
-        <label for="email">이메일</label><br>
-        <input type="email" id="email"><br><br>
-
+        <input type="tel" id="tel" value="010-" autofocus><br><br>
+        <label for="email">이메일</label><br>   <!-- autofocus 초기 커서 위치-->
+        <input type="email" id="email" disabled><br><br>
+                                                <!-- required는 필수 입력란 만들고, disabled는 비활성화-->
         <input type="radio" id="html" name="fav_language" value="HTML">
         <label for="html">HTML</label><br>
-        <input type="radio" id="css" name="fav_language" value="CSS">
+        <input type="radio" id="css" name="fav_language" value="CSS" checked>
         <label for="css">CSS</label><br>
         <input type="radio" id="javascript" name="fav_language" value="JavaScript">
         <label for="javascript">JavaScript</label><br><br>
-
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <!-- checked, selected 이용하면 초기에 선택되어있도록 설정 가능-->
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked>
         <label for="vehicle1"> I have a bike</label><br>
         <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
         <label for="vehicle2"> I have a car</label><br>
@@ -37,13 +37,13 @@
         <select name="fruits" id="fruits">
             <option value="apple">사과</option>
             <option value="watermelon">수박</option>
-            <option value="strawberry">딸기</option>
+            <option value="strawberry" selected>딸기</option>
         </select><br><br>
         <label for="intro">자기 소개</label><br>
         <textarea name="intro" id="intro" rows="10" cols="60"></textarea><br><br>  <!-- 10줄에 60칸 공간 -->
-
+                                                <!-- label의 for와 input의 id가 일치하여 연계가 되는 것-->
         <input type="submit" value="제출">
-        <input type="reset" value="취소">
+        <input type="reset" value="입력한 데이터 없애기">
     </form>        
 </body>
 </html>
