@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <style>
+        * { font-family: monospace;} 
+        p, h1, h2 { text-align: center; color: red;}
+        #para1 { text-align: center; color: blue;}
+        .center { text-align: center; color: blueviolet;}
+        div > p { text-align: center; color: black;} /* 자식 셀렉터 */
+    </style>
+                                <!-- *는 모든경우에 대해서 적용-->
+                                <!-- p, h1, h2식으로 모두 적용 가능-->
+</head>
+<body style="margin: 40px;">
+    <h1 id="para1">para1(id) 적용</h1>
+    <h1>id 미적용, 태그에 적용</h1>
+    <p>p태그 적용</p>
+    <p class="center">Red and center-aligned paragraph</p>
+    <h2>Red and center-aligned paragraph</h2>
+    <div>
+        <p>div아래에 p태그 적용</p>
+        <section>
+            <p>div아래 section, div의 자식x 자손이어서 해당사항x</p>
+        </section>
+    </div>
+
+    
+</body>
+</html>
