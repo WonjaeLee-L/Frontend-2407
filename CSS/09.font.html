@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Font</title>
+    <style>
+        .p1 {font-family: "Times New Roman", Times, serif; font-weight: lighter;}
+        .p2 {font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
+        .p3 {font-family: "Lucida Console", "Courier New", monospace; font-weight: bolder;}
+        .p5 {font-variant: normal;}
+        .p6 {font-variant: small-caps;}
+    </style>
 </head>
 <body style="margin: 40px;">
-    <h2>Font size</h2>
+    <h2 style="color: brown;">Font size</h2>
     <p>폰트의 크기, font size</p>
     <p style="font-size: 16px;">폰트의 크기, font size</p>
     <p style="font-size: 1.0em;">폰트의 크기, font size</p>   <!-- 16px = 1em = 기본p사이즈 -->
     <h2 style="font-size: 8vw;">반응형 폰트</h2>    <!-- 1vw(뷰포트 너비)는 화면너비의 1% -->
+
+    <h2 style="color: brown;">CSS font-family, 글꼴 두께</h2>
+    <p class="p1"> This is a paragraph, shown in the Times New Roman font.</p>
+    <p class="p2">This is a paragraph, shown in the Arial font.</p>
+    <p class="p3"> is a paragraph, shown in the Lucida Console font.</p><br><br>
+
+    <h2 style="color: brown;">Font-variant</h2>
+    <p class="p5">My name is Wonjae Lee</p>
+    <p class="p6">My name is Wonjae Lee</p>
+
 </body>
 </html>

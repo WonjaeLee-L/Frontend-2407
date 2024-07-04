@@ -15,7 +15,7 @@
         a:active {color: blue;}
         /* 밑줄을 없애고 싶을때. 이게 일반적인 경우 */
         a { text-decoration: none; }
-        
+
         /* 버튼만들기 */
         div > a:link, div > a:visited{
             background-color: #f44336;
@@ -28,7 +28,26 @@
         div > a:hover, div > a:active {
             background-color: red;
         }
+        span { color: red; font-style: italic;}
+        a.one:link {color:#ff0000;}
+        a.one:visited {color:#0000ff;}
+        a.one:hover {color:#ffcc00;}
 
+        a.two:link {color:#ff0000;}
+        a.two:visited {color:#0000ff;}
+        a.two:hover {font-size:150%;}
+
+        a.three:link {color:#ff0000;}
+        a.three:visited {color:#0000ff;}
+        a.three:hover {background:#66ff66;}
+
+        a.four:link {color:#ff0000;}
+        a.four:visited {color:#0000ff;}
+        a.four:hover {font-family:monospace;}
+
+        a.five:link {color:#ff0000;text-decoration:none;}
+        a.five:visited {color:#0000ff;text-decoration:none;}
+        a.five:hover {text-decoration:underline;}
     </style>
 </head>
 <body style="margin: 40px;">
@@ -38,5 +57,37 @@
     <div>
         <a href="#" target="_blank">이것은 링크</a>
     </div>
+    <h2>The cursor Property</h2>
+    <p style="background-color: chocolate; width: 20%; opacity: 0.7;">
+        Mouse over the words to change the cursor.
+    </p>
+    <span style="cursor:auto">auto</span><br>
+    <span style="cursor:crosshair">crosshair</span><br>
+    <span style="cursor:default">default</span><br>
+    <span style="cursor:e-resize">e-resize</span><br>
+    <span style="cursor:help">help</span><br>
+    <span style="cursor:move">move</span><br>
+    <span style="cursor:n-resize">n-resize</span><br>
+    <span style="cursor:ne-resize">ne-resize</span><br>
+    <span style="cursor:nw-resize">nw-resize</span><br>
+    <span style="cursor:pointer">pointer</span><br>
+    <span style="cursor:progress">progress</span><br>
+    <span style="cursor:s-resize">s-resize</span><br>
+    <span style="cursor:se-resize">se-resize</span><br>
+    <span style="cursor:sw-resize">sw-resize</span><br>
+    <span style="cursor:text">text</span><br>
+    <span style="cursor:w-resize">w-resize</span><br>
+    <span style="cursor:wait">wait</span><br>
+
+    <h2>Styling Links</h2>
+
+    <p style="background-color: darksalmon; opacity: 0.7; width: 20%;">Mouse over the links and watch them change layout:</p>
+
+    <p><b><a class="one" href="#" target="_blank">This link changes color</a></b></p>
+    <p><b><a class="two" href="#" target="_blank">This link changes font-size</a></b></p>
+    <p><b><a class="three" href="#" target="_blank">This link changes background-color</a></b></p>
+    <p><b><a class="four" href="#" target="_blank">This link changes font-family</a></b></p>
+    <p><b><a class="five" href="#" target="_blank">This link changes text-decoration</a></b></p>
+
 </body>
 </html>
