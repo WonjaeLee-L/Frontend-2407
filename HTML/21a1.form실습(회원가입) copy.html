@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body style="margin: 40px; text-align: center; font-style: normal;">
+    <h1 style="background-color: bisque; border: solid darkgoldenrod;">회원가입</h1>
+        <p style="text-align: right; color: red;"><sub>*</sub>은 필수 입력 사항 입니다.</p>
+    <form action="#" method="get">
+        <label for="uame"><strong>사용자 ID<sub style="color: red;">*</sub></strong></label><br> 
+        <input type="text" name="unmae" id="uname" placeholder="ID를 입력하세요" required><br><br>
+        <label for="pwd"><strong>패스워드<sub style="color: red;">*</sub></strong></label><br>
+        <input type="password" id="pwd" size="30" placeholder="password를 입력하세요" required><br><br>
+        <label for="pwd1"><strong>패스워드 확인<sub style="color: red;">*</sub></strong></label><br>
+        <input type="password" id="pwd1" size="30" placeholder="다시 한 번 입력하세요" required><br><br>
+        <label for="name"><strong>이름<sub style="color: red;">*</sub></strong></label><br>
+        <input type="name" id="name" placeholder="이름을 입력하세요" required><br><br>
+        
+        <form action="/action_page.php">
+            <label for="birthday"><strong>생년월일</strong></label><br>
+            <input type="date" id="birthday" name="birthday">
+        </form>
+
+        <p style="text-align: center;"><strong>성별<sub style="color: red;">*</sub></strong><p>
+        <input type="radio" id="male" name="male" value="male" checked required>
+        <label for="male">남</label>
+        <input type="radio" id="female" name="female" value="female">
+        <label for="female">여</label><br><br>
+
+        <label for="email"><strong>이메일<sub style="color: red;">*</sub></strong></label><br>  
+        <input type="email" id="email" placeholder="email을 입력하세요" required><br><br>
+
+        <label for="tel"><strong>전화번호</strong></label><br>
+        <input type="tel" id="tel" placeholder="010포함하여 입력" autofocus><br><br>
+        
+        <label for="intro"><strong>자기소개</strong></label><br>
+        <textarea name="intro" id="intro" rows="10" cols="60"></textarea><br><br>  
+
+        <input type="submit" value="제출">
+        <input type="reset" value="다시 입력">
+    </form>        
+</body>
+</html>
