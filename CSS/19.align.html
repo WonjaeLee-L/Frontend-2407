@@ -6,6 +6,7 @@
     <title>Align</title>
     <style>
         .center {margin: auto; width: 50%; border: 3px solid green; padding: 10px;}
+        .img {display: block; margin: auto;}
     </style>
 </head>
 <body style="margin: 40px;">
@@ -19,6 +20,11 @@
     <div style="text-align: center; margin-top: 30px;">
         <span>This span element is centered. style에서 text-align: center로 가능</span>
     </div>
-    
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="https://picsum.photos/300/200" alt=""> <!-- img tag도 block tag아니고 inline tag이므로
+                                                            margin: auto X, text-align: center로 -->
+    </div>
+    <img class="img" src="https://picsum.photos/300/200?q=2" alt=""> <!-- class 만들면 가능,
+                                                                     display 속성을 block으로 바꾸고 -->
 </body>
 </html>
