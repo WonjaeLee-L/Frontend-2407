@@ -5,28 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduce myself</title>
     <script src="https://kit.fontawesome.com/876cee0f64.js" crossorigin="anonymous"></script>
+    <style>
+        
+        * {box-sizing: border-box;}        
+        body {font-family: Arial, Helvetica, sans-serif;}
+        /* Style the header */
+        header {
+          background-color: #64242a;
+          padding: 3px;
+          text-align: center;
+          font-size: 35px;
+          color: white;
+        }
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+          float: left;
+          width: 30%;
+          background: #a34c4c;
+          padding: 20px;
+        }
+        /* Style the list inside the menu */
+        nav ul {
+          list-style-type: none;
+          padding: 0;
+          text-align: center;
+        }
+        article {
+          float: left;
+          padding: 20px;
+          width: 70%;
+          background-color: #f1f1f1;
+        }
+        /* Clear floats after the columns */
+        section::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        /* Style the footer */
+        footer {
+          background-color: #777;
+          padding: 10px;
+          text-align: center;
+          color: white;
+        }
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+          nav, article {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .auto {width: 300px; height: 90px; background-color: blanchedalmond; overflow: auto;}
+
+        a:link {color: red;}
+        a:visited {color: rgb(253, 243, 236);}
+        a:hover {color: rgb(0, 0, 0);}
+        a:active {color: rgb(207, 144, 102);}
+        </style>
 </head>
 <body style="margin: 40px;">
-    <h2><a href="https://github.com/WonjaeLee-L"><i class="fa-brands fa-github"></i></a>이원재</h2>
-    <div>
-        <a href="https://maps.app.goo.gl/tW6hG1qf2Jg4EjFK9">
-            <i class ="fa-solid fa-location-dot"></i></a>&nbsp;<stan>태어난 곳</stan>
-    </div>
-    <div>
-        <a href="https://maps.app.goo.gl/muXGRGqe8rKxzfKM8">
-            <i class="fa-solid fa-utensils"></i></a>&nbsp;<stan>좋아하는 음식</stan>
-    </div>
-
-    <a href="https://naver.me/GeUMzUJx">
-        <i class="fa-solid fa-bicycle"></i></a>&nbsp;<stan>자전거 타기</stan>
-    <br>
-    <div>
-        <a href="https://maps.app.goo.gl/isCTCdjZHrBnrCTLA">
-            <i class="fa-solid fa-plane"></i></a>&nbsp;<stan>가봤던곳</stan>
-    </div>
-
+    <header>
+        <h2>나를 소개합니다 <a href="https://github.com/WonjaeLee-L">
+            <i class="fa-brands fa-github"></i></a>이원재</h2>
+        </header>
     
-    <i class="fa-brands fa-github"></i><br>
+        <section>
+        <nav>
+          <ul>
+            <li><h2><a href="https://maps.app.goo.gl/iW3aUtofx2FhWnAEA">
+                <i class ="fa-solid fa-location-dot">&nbsp;태어난 곳</a></i></h2></li><br>
+            <li><h2><a href="https://maps.app.goo.gl/isCTCdjZHrBnrCTLA">
+                <i class="fa-solid fa-plane">&nbsp;가봤던 여행지</a></i></h2></li><br>
+            <li><h2><a href="https://maps.app.goo.gl/muXGRGqe8rKxzfKM8">
+                <i class="fa-solid fa-utensils">&nbsp;좋아하는 음식</a></i></h2></li><br>
+            <li><h2><a href="https://naver.me/GeUMzUJx">
+                <i class="fa-solid fa-bicycle">&nbsp;취미</a></i></h2></li>
+          </ul>
+        </nav>
+    
+        <article>
+          <h1>태어난 곳</h1>
+            <div>
+            <img src="img/seoul.jpg" alt="" style="float: left; width: 100px;">
+
+                <div class="auto">저는 1991년, 서울시 양천구 소재의 병원에서 태어났습니다.</div>
+            </div>
+        </article>
+      </section>
+      
+      <footer>
+        <p>Footer</p>
+      </footer> 
+
     <br>
 </body>
 </html>
