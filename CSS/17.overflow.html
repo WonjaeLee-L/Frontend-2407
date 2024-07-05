@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .visible {width: 300px; height: 60px; background-color: aquamarine; overflow: visible;}
+        .hidden {width: 300px; height: 60px; background-color: aquamarine; overflow: hidden;}
+        .scroll {width: 300px; height: 60px; background-color: aquamarine; overflow: scroll;}
+        .auto {width: 300px; height: 90px; background-color: aquamarine; overflow: auto;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h2>Overflow control</h2><br><br>
+    <div class="visible">
+        <h4>visible. 무조건 보임</h4>
+        Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latin literature from 45 BC,
+        making it over 2000 years old.
+    </div><br><br>
+    <div class="hidden" style="margin-top: 60px;">
+        <h4>hidden. 잘림</h4>
+        Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latin literature from 45 BC,
+        making it over 2000 years old.
+    </div><br><br>
+    <div class="scroll">
+        <h4>scroll. 무조건 scroll생성</h4>
+        Contrary to popular belief, Lorem Ipsum is not simply random text.   
+    </div><br><br>
+    <div class="auto">
+        <h4>auto. 필요시에만 scroll생성</h4>
+        Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latin literature from 45 BC,
+        making it over 2000 years old.
+    </div>
+    <div class="auto" style="margin-top: 60px;">
+        <h4>auto. 필요시에만 scroll생성</h4>
+    </div>
+</body>
+</html>
