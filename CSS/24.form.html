@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Units</title>
+    <style>
+        h1 { font-size: 15mm;}
+        h2 { font-size: 1cm;}
+        p { font-size: 0.5cm; line-height: 1cm;}
+    </style>
 </head>
 <body style="margin: 40px;">
-    <!-- boostrap 이용하면 훨씬 간단하고 편함 -->
+    <h1>This is heading 1</h1>
+    <h2>헤딩 2입니다.</h2>
+    <p>This is a paragraph</p>
+    <p>또 다른 문단입니다.</p>
+    <br>
+    <h1 style="font-size: 10vw;">Hello</h1>
+    <p>1vw = 1% of viewport width</p>
+    <br>
+    <div style="font-size: 20px;">
+        <p style="font-size: 20px;">The font-size of this part is 20px</p>
+        <div style="font-size: 2rem; border: 1px solid black;">
+            The font-size of this element is 2rem.
+            <!--얘를 감싼 밖의 사이즈(20px)에 따라서 rem이 바뀌므로 크기 바뀜 -->
+        </div>
+    </div>
 </body>
 </html>
