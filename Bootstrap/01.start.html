@@ -14,23 +14,34 @@
   <h1>My First Bootstrap Page</h1>
   <p>Resize this responsive page to see the effect!</p> 
 </div>
-  
+  <!-- p1,2,3,4,5 padding의 약자
+   mt는 margin top의 약자 -->
 <div class="container mt-5">
   <div class="row">
-    <div class="col-sm-4">
+    <!-- row로 감싸주어 그리드 시스템(12등분)적용, col-sm-4라는것은 (반응형)스몰사이즈에서 4개를 갖는 것
+     col-sm-6 col-md-4 col-lg-3은 
+     스몰에서 여섯개의 폭을 가진다(화면폭의 50%), md 미디움에서는 1/3, 라지에서는 1/4(총12이므로)
+     그냥 col-3하면 데스크탑 너비의 1/4이라고 생각-->
+     
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <h3>Column 1</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <h3>Column 2</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <h3>Column 3</h3>        
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <h3>Column 3</h3>        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
   </div>
 </div>
