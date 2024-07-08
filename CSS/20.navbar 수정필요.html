@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        ul.basic { list-style-type: none; margin: 0; padding: 0; width: 40px; }
+        .basic > li a { display: block;}
+        ul.vertical { list-style-type: none; margin: 0; padding: 0; width: 200px; 
+            background-color: #f1f1f1; }
+            /* 아래는 vertical 밑에있는 li a에 대해서 정의하는 것. */
+        .vertical > li a { display: block; color: #000; padding: 8px 16px; text-decoration: none;}        
+        .vertical > li a:hover { background-color: #555; color: white;}
+        .active { background-color: #04aa6d; color: white; }
+        /* 아래부터 horizontal에 쓰이는 것들 */
+        ul.inline { list-style-type: none; margin: 0; padding: 0; }
+        li.inline > li {display: inline;}
+        li.inline > li a {display: inline;}
+        ul.horizontal { list-style-type: none; margin: 0; padding: 0; overflow: hidden;
+        background-color: #333; }
+        li.horizontal > li { float: left; }
+        /* li.horizontal 밑에 자손 셀렉터 a의 설정 */
+        li.horizontal > li a { display: block; color: white; text-align: center;
+        padding: 14px 16px; text-decoration: none;}
+        li.horizontal a:hover { background-color: #111;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h2>Vertical Navigation Bar</h2>
+    <ul class="basic">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li> 
+    </ul>
+    <h2>Vertical Navigation Bar Design</h2> <!-- 앞에 아이콘도 심어보기, 활성도 해보기 -->
+    <ul class="vertical">
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+    <h2>Horizontal Navigation Bar</h2>
+    <ul class="inline">
+        <li.inline><a href="#">Home</a></li>
+        <li.inline><a href="#">News</a></li>
+        <li.inline><a href="#">Contact</a></li>
+        <li.inline><a href="#">About</a></li>
+    </ul>
+    <br>
+    <ul class="horizontal">
+        <li.horizontal><a href="#">Home</a></li>
+        <li.horizontal><a class= "active" href="#">News</a></li>
+        <li.horizontal><a href="#">Contact</a></li>
+        <li.horizontal><a href="#">About</a></li>
+    </ul>
+    <ul class="horizontal">
+        <li.horizontal><a href="#">Home</a></li>
+        <li.horizontal><a href="#">News</a></li>
+        <li.horizontal><a href="#">Contact</a></li>
+        <li.horizontal style="float: right;"><a class="active" href="#">About</a></li>
+    </ul>
+</body>
+</html>
