@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Button</h1>
+</div>
+
+  <div class="container mt-5">
+    <h2>Button Styles</h2>
+    <button type="button" class="btn">Basic</button>
+    <button type="button" class="btn btn-primary" onclick="alert('확인 메세지')">확인</button>
+    <!-- 확인을 누르면 '확인 메세지'가 알림 팝업으로 출력 됨 -->
+    <button type="button" class="btn btn-secondary ms-1">취소</button>
+    <button type="button" class="btn btn-success ms-2">Success</button>
+    <button type="button" class="btn btn-info ms-3">Info</button>
+    <button type="button" class="btn btn-warning ms-4">Warning</button>
+    <button type="button" class="btn btn-danger ms-5">Danger</button> <!-- 간격 왼쪽으로 생김 -->
+    <button type="button" class="btn btn-dark" onclick="location.href='https://www.w3schools.com'">Dark</button>
+    <!-- onclick에 주소 넣으면(location.href='') 누르면 이동 됨 -->
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-link">Link</button>
+
+    <h2 class="mt-5">Outline Button</h2>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-dark">Dark</button>
+    <button type="button" class="btn btn-outline-light text-dark">Light</button>
+
+    <h2 class="mt-5">Spinner Button</h2>
+    <button class="btn btn-primary">
+      <span class="spinner-border spinner-border-sm"></span>
+    </button>
+    
+    <button class="btn btn-primary">
+      <span class="spinner-border spinner-border-sm"></span>
+      Loading..
+    </button>
+    
+    <button class="btn btn-primary" disabled>
+      <span class="spinner-border spinner-border-sm"></span>
+      Loading..
+    </button>
+    
+    <button class="btn btn-primary" disabled>
+      <span class="spinner-grow spinner-grow-sm"></span>
+      Loading..
+    </button>
+
+    <h2 class="mt-5">Button Group</h2>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Apple</button>
+      <button type="button" class="btn btn-success">Samsung</button>
+      <button type="button" class="btn btn-info">Sony</button>
+    </div>
+
+  </div>
+</body>
+</html>
