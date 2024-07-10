@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>Form</h1>
+</div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h2>Stacked Form</h2>
+        <form action="#" method="get">
+          <div class="my-3">
+            <label for="uid">User ID</label>  <!-- class 안붙은 기본 모양 -->
+            <input type="text" name="uid" id="uid" placeholder="Enter user-id">
+          </div>
+          <div class="my-3">
+            <label for="uid" class="form-label">User ID</label>
+            <input type="text" class="form-control" name="uid" id="uid" placeholder="Enter user-id">
+          </div>
+          <div class="my-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> 사용자 ID 저장
+            </label>
+          </div>
+          <div class="d-flex justify-content-center me-2">
+            <button type="submit" class="btn btn-primary">제출</button>
+            <button type="reset" class="btn btn-secondary">취소</button>
+            <!-- 두개 이상이면 div로 묶어서 가능-->
+          </div>
+
+
+
+        </form>
+
+      </div>
+      <div class="col">
+        <h2>테이블과 결합된 양식</h2>
+        <form action="/" method="get">
+          <table class="table table-borderless">
+            <tr>
+              <td><label for="uid2" class="col-form-label">User ID</label></td>
+              <td><input type="text" class="form-control" name="uid" id="uid2" placeholder="Enter user-id"></td>
+            </tr>
+            <tr>  <!-- form-label앞에 col-붙여서 user id, password랑 옆에 칸이랑 줄맞춤 -->
+              <td><label for="pwd2" class="col-form-label">Password</label></td>
+              <td><input type="password" class="form-control" name="pwd" id="pwd2" placeholder="Enter password"></td>
+            </tr>
+            <tr>
+              <td><label for="comment" class="col-form-label">comment</label></td>
+              <td><textarea rows="5" class="form-control" name="comment" id="comment"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember"> 사용자 ID 저장하기
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: center;">
+                <button type="submit" class="btn btn-primary me-1">제출</button>
+                <button type="reset" class="btn btn-secondary">취소</button>
+              </td>
+            </tr>
+          </table>
+
+        </form>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <input type="color" class="form-control form-control-color" value="#cccccc">
+      </div>
+      <div class="col">
+        <input type="date" class="form-control" value="2024-07-10">
+      </div>
+      <div class="col">
+        <input type="number" class="form-control" value="0">
+      </div>
+      <div class="col">
+        <input type="time" class="form-control" value="13:20">
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
