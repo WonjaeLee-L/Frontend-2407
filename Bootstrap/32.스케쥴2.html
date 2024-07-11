@@ -229,7 +229,7 @@
             </td>
             <td>
               <div class="d-flex justify-content-between">
-                <div><strong>17</strong></div>
+                <div><a data-bs-toggle="modal" href="#myModal">17</a></strong></div>
                 <div>제헌절</div>
               </div>
             </td>
@@ -360,13 +360,70 @@
           </div>
           
           <div class="modal-body">
+            <from action="/schedule" method="get">
+              <div class="my-1">
+                <label for="title" class="form-label">
+                  일정명
+                  <label class="form-check-label ms-4">
+                    <input class="form-check-input" type="checkbox" name="remember">
+                    <span class="ms-1">중요</span>
+                  </label>
+                </label>
+                <input type="date" class="form-control" name="titile" id="title" required>
+              </div>
+            <div class="row"> 
+              <div class="col-7">
+                <div class="my-2">
+                <label for="sdate" class="form-label">시작일</label>
+                <input type="date" class="form-control" name="sdate" id="sdate" value="2024-07-01" required>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="my-2">
+                <label for="sdate" class="form-label">시작시간</label>
+                <input type="time" class="form-control" name="stime" id="stime" value="14:00" required>
+                </div>
+              </div>
+              <div class="col-7">
+                <div class="my-2">
+                <label for="edate" class="form-label">종료일</label>
+                <input type="date" class="form-control" name="edate" id="edate" value="2024-07-01" required>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="my-2">
+                <label for="etime" class="form-label">종료시간</label>
+                <input type="time" class="form-control" name="etime" id="etime" value="14:00" required>
+                </div>
+              </div>
+            </div>
+            <div class="my-2">
+              <label for="memo" class="form-label">장소</label>
+              <input type="text" class="form-control" name="memo" id="memo">
+            </div>
+
+            <div class="my-2">
+              <label for="memo" class="form-label">메모</label>
+              <input type="text" class="form-control" name="memo" id="memo">
+            </div>
+
+
+
+            </from>
+
+
+
+
+
+<!--
             <table>
               <tr>
                 <td style="height: 80px;">
-                  <label for="date" class="col-form-label">일정명
-                    <label class="form-check-label ms-4"> <!-- ms-4 이용해서 왼쪽 띄운다 -->
+                  <label for="text" class="col-form-label">제목
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="remember"> 중요
-                  </label><br><input type="date" class="form-control">
+                  </label><br><input type="text" class="form-control">
                 </td>
               </tr>
 
@@ -407,7 +464,7 @@
                   </label><input type="text" class="form-control">
                 </td>
               </tr>
-            </table>
+            </table> -->
           </div>
 
           <div class="modal-footer">
