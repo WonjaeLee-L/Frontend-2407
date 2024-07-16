@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일정추가</title>
+    <style>
+        td, input { padding: 3px; }
+        .container { width: 50%; margin: auto; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container" style="border: 10px;">
+        <h1 class="label">일정추가</h1>        
+        <table>
+                <tr>
+                    <h2>
+                        일정명&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <stan class="label">
+                        <input type="checkbox" id="important" name="important" value="important">
+                        <label for="important"> 중요</label></stan><br>
+                    </h2>
+                </tr><input type="text" name="sname" id="sname" size="40">
+                <tr>
+                    <h2>
+                        시작일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        시작시간
+                    </h2>
+                </tr>
+                <tr>
+                    <input type="date" name="sdate" id="sdate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="time" name="stime" id="stime">
+                </tr>
+                <tr>
+                    <h2>
+                        종료일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        종료시간
+                    </h2>
+                </tr>
+                <tr>
+                    <input type="date" name="edate" id="edate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="time" name="etime" id="etime">
+                </tr>
+                <tr>
+                    <h2>장소</h2>
+                </tr><input type="text" name="place" id="place" size="40">
+                <tr>
+                    <h2>메모</h2>
+                </tr><input type="text" name="memo" id="memo" size="40">
+                <tr>
+                    <td class="label" colspan="2">
+                        <input type="submit" value=" 제출 ">
+                        <input type="reset" value=" 종료 ">
+                    </td>
+                </tr>
+        </table>
+    </div>
+</body>
+</html>
