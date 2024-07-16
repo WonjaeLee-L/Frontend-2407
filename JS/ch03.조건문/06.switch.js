@@ -29,6 +29,7 @@ else if (score % 10 >=3)
     sign = '0';
 else
     sign = '-';
+
 switch(parseInt(score/10)) {            
     case 10:
         grade = 'A+';
