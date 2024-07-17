@@ -10,15 +10,36 @@ for (let i = 1; i <= 10; i++) {
     sumOdd += i;
 }
 console.log(sumOdd);
-
+/*
 for (let i = 1; i <= 5; i++) {
     let line = '';
     for (let k = 1; k <= 5; k++) {
         // if (k == i)         // 1줄에서 1빼고, 2줄에서 2빼고...
-        //     continue;
+        //     continue;        //여기 두줄
         line += k + ' ';
         if (k ==i)              //위에 두줄이랑
             break;              //여기 두줄 번갈아가며 주석처리하고 결과 보기
+    }
+    console.log(line);
+}
+*/
+for (let i = 1; i <= 5; i++) {
+    let line = '';
+    for (let k = 1; k <= 5; k++) {
+        line += k + ' ';
+        if (k ==i)              
+            break;              
+    }
+    console.log(line);
+}
+
+
+for (let i = 1; i <= 5; i++) {
+    let line = '';
+    for (let k = 1; k <= 5; k++) {
+        if (k == i)         
+            continue;
+        line += k + ' ';
     }
     console.log(line);
 }
