@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+const bYear = 1991, bMonth = 7, bDay = 5; 
+const today = new Date();
+let tYear = today.getFullYear();
+let tMonth = today.getMonth() + 1;      
+let tDay = today.getDate();         
+let age = 0;
+
+
+function calculateAge() {
+            const birthInput = document.getElementById('birth').value;
+            const birth = new Date(birthInput);
+            const today = new Date();
+
+            
+            let age = today.getFullYear() - birth.getFullYear();
+            const monthDifference = today.getMonth() - birth.getMonth();
+            
+            document.getElementById('result').innerHTML = `<strong>당신의 나이는 ${age}세입니다.</strong>`;
+        }
+    </script>
+</head>
+<body>
+    <h1>나이 계산기</h1>
+    <label for="birth">생년월일을 입력하세요:</label>
+    <input type="date" id="birth">
+    <button onclick="calculateAge()">나이 계산</button>
+    <p id="result"></p>
+    
+    <script>
+        
+    </script>
+</body>
+</html>
