@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>주사위 게임</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        button {
+            border-style: double;
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #result {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
+    <h1>주사위 게임</h1>
+    <button onclick="rollDice()">주사위</button>
+    <p id="a">ㅇㅇㅇ</p>
     
+    <script>
+        function rollDice() {
+            // 주사위 세 개를 굴립니다
+            let dice1 = Math.ceil(Math.random() * 6);
+            let dice2 = Math.ceil(Math.random() * 6);
+            let dice3 = Math.ceil(Math.random() * 6);
+            let prize = '';
+
+            // 주사위 결과를 출력합니다
+            let diceResults = `주사위 결과: ${dice1}, ${dice2}, ${dice3}`;
+
+            // 상금을 계산합니다
+            if (dice1 == dice2 && dice2 == dice3) {
+                prize = 10000 + dice1 * 1000;
+                prize = `모든 주사위가 같은 숫자입니다! 상금은 ${prize}원입니다.`;
+            } else if (dice1 == dice2 || dice1 == dice3 || dice2 == dice3) {
+                let sameDice = (dice1 == dice2 || dice1 == dice3) ? dice1 : dice2;
+                prize = 1000 + sameDice * 100;
+                prize = `두 개의 주사위가 같은 숫자입니다! 상금은 ${prize}원입니다.`;
+            } else {
+                let maxDice = Math.max(dice1, dice2, dice3);
+                prize = maxDice * 100;
+                prize = `모든 주사위의 숫자가 다릅니다. 가장 높은 숫자는 ${maxDice}입니다. 상금은 ${prize}원입니다.`;
+            }
+
+            // 결과를 표시합니다
+            document.getElementById('a').innerHTML = `${diceResults}<br><strong>${prize}</strong>`;
+            // HTML요소의 id값이 a인 ㅇㅇㅇ를 `${diceResults}<br><strong>${prize}</strong>`로 변경한다.
+        }
+    </script>
 </body>
 </html>
