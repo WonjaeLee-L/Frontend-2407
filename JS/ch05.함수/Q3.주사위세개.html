@@ -28,7 +28,7 @@
 <body>
     <h1>주사위 게임</h1>
     <button onclick="rollDice()">주사위</button>
-    <p id="a">ㅇㅇㅇ</p>
+    <p id="a" style="color: red;">상금을 타가세요!</p>
     
     <script>
         function rollDice() {
@@ -57,7 +57,8 @@
 
             // 결과를 표시합니다
             document.getElementById('a').innerHTML = `${diceResults}<br><strong>${prize}</strong>`;
-            // HTML요소의 id값이 a인 ㅇㅇㅇ를 `${diceResults}<br><strong>${prize}</strong>`로 변경한다.
+            // HTML요소의 id값이 a인 상금을 타가세요!를
+            // `${diceResults}<br><strong>${prize}</strong>`로 변경한다.
         }
     </script>
 </body>
