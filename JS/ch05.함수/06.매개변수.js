@@ -27,6 +27,8 @@ printFruit('복숭아', 3);
  * 0, 0.0, '', undefined
  */
 
+
+// 기본 매개변수
 // default 값 지정하기 - 매개변수값을 지정하지 않으면 default값이 나오도록 defauolt값을 설정
 // 아래는 count값을 써주면 그 값이 나오고 안써주면 0이 되는 것.
 function printFruit4(num, count = 0) {
@@ -34,3 +36,22 @@ function printFruit4(num, count = 0) {
 }
 printFruit3('복숭아');
 printFruit('복숭아', 3);
+
+
+// 가변 매개변수 (...items)
+// ... : rest ooperator, '나머지'의 의미
+//...items라고 하면 뒤에 갯수 상관x array로 묶여서 나온다. 함수 안에서 배열처럼 사용할 수 있음.
+function sample(...items) {
+    console.log(items);
+}
+sample(1, 2);
+sample(1, 2, 3, 4);
+console.log()
+
+// 2, 3, 4만 array로 묶임
+function sample(x, ...items) {
+    console.log(x, items);
+}
+sample(1, 2);
+sample(1, 2, 3, 4);
+console.log()
