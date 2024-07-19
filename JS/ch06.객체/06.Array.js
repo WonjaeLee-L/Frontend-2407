@@ -26,12 +26,23 @@ console.log(cars);
 cars.reverse();
 console.log(cars);
 
-// sort()* - 정렬, 파괴적 메소드
-let numbers = [34, 25, 89, 7, 45, 55, 19];
+// sort()* - 정렬, 파괴적 메소드 (기본적으로 문자열 기준으로 오름차순 정렬함)
+cars.sort();
+console.log(cars);
 
+
+let numbers = [34, 25, 89, 7, 45, 55, 19];
 // 오름차순(Ascending order)
 numbers.sort((a, b) => a - b);      //아래꺼랑 같다.
 // numbers.sort(function (a, b) {
 //     return a - b;    
 // });
 console.log(numbers);
+
+// 내림차순(Descending order)
+numbers.sort((a, b) => b - a);
+console.log(numbers);
+
+// slice()
+console.log(fruits);
+console.log(fruits.slice(1));       //fruits.slice(1, 3)과 동일
