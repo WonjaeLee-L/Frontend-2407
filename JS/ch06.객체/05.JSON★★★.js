@@ -16,3 +16,5 @@ console.log(internalForm);
 
 let personArray  = [person, newPerson, {name: 'Maria', age: 25, job: '디자이너'}];
 console.log(JSON.stringify(personArray));
+
+// Ajax 검색
