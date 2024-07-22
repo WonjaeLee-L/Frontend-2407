@@ -7,26 +7,49 @@
     <style>
         .class1 {color: blue;}
         .class2 {background-color: beige;}
+        .class3 {display:block; margin-top: 20px}
     </style>
     <script>
-        function addNode() {
-            const h3 = document.createElement('h3');
+        function addNode1() {
+            const h3 = document.createElement('h3');    // 내가 가리키는 것이 변화하므로 const로 가능(참조형)
             h3.classList.add('class1', 'class2');   // <h3 class = "class1 class2">의 의미
             h3.innerHTML = '이원재';
 
             document.querySelector('#point').prepend(h3);
             // 만들었던 태그를 point라는 div박스(div#point) 앞(prepend)에 h3를 추가시킴
-            // document.querySelector('#point').append(h3);    // 뒤에 추가
+        }
+        function addNode2() {
+            const h3 = document.createElement('h3');
+            h3.classList.add('class1', 'class2');
+            h3.innerHTML = '이원재';
+            document.querySelector('#point').append(h3);    // 뒤에 추가
         }
         function removeNode() {
-
+            const h3 = document.querySelector(".class1.class2")     //여러개 가능
+            document.querySelector('#point').removeChild(h3);
         }
+        function addPicture() {
+            const img = document.createElement('img');
+            img.src = 'https://picsum.photos/320/160';
+            img.classList.add('class3');            // image가 inline인걸 따로 나타나게 하기위해 display block
+            document.querySelector('#point').append(img);   //point를 찾아서 그 뒤에 img태그를 매달아
+
+        }        
+        function removePicture() {
+            const img = document.querySelector('img');  // 'img'대신 '.class3'해도 됨
+            document.querySelector('#point').removeChild(img);
+        }
+
+
     </script>
 </head>
 <body style="margin: 40px;">
     <h3>당신의 이름은 무엇입니까?</h3>
-    <button onclick="addNode()">추가</button>
+    <button onclick="addNode1()">앞에 추가</button>
+    <button onclick="addNode2()">뒤에 추가</button>
     <button onclick="removeNode()">삭제</button>
+    <button onclick="addPicture()">사진 추가</button>
+    <button onclick="removePicture()">사진 제거</button>
     <hr>
     <div id="point">
         A quick brown fox jumps over the lazy dog.
