@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성순서 오류 해결 4</title>
+    <script>
+        //굳이 함수 이름을 쓰지 않고 윈도우 로딩되면 실행하게끔 바로 function이랑 연결
+        window.onload = function() {
+        document.querySelector('body').style.backgroundColor = 'yellow';
+        document.querySelector('h1').style.color = 'red';
+        }        
+    </script>
+</head>
+<body>      
+    <h1>Header 1</h1>
+    <h1>Header 2</h1>
+</body>
+</html>

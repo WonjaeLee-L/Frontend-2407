@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성순서 오류 해결 1</title>
+</head>
+<body>      <!-- body에 먼저 만든후에 script로 속성 주면 올바르게 동작, 근데 body에 잘 두지 않음
+                        head에 두는법은 해결 2로 -->
+    <h1>Header 1</h1>
+    <h1>Header 2</h1>
+    <script>
+        document.querySelector('body').style.backgroundColor = 'yellow';
+        document.querySelector('h1').style.color = 'red';
+    </script>
+
+</body>
+</html>

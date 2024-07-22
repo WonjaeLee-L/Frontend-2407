@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성순서 오류</title>
+    <script>
+        document.querySelector('body').style.backgroundColor = 'yellow';
+            // CSS selector로 찾겠다는게 querysleector.
+            // body를 찾아서 배경색을 노랑으로 바꿈
+        document.querySelector('h1').style.color = 'red';
+            // h1을 찾아서 컬러를 레드로 바꿈
+            // document 객체에서 style을 찾지를 못했음 그래서 에러
+            // 헤드에 이런거 넣고 바디에 문장쓰면 에러
+    </script>
+</head>
+<body>
+    <h1>Header 1</h1>
+    <h1>Header 2</h1>
+</body>
+</html>
