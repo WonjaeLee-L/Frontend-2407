@@ -21,12 +21,16 @@
             const [left, up, right, down] = [37, 38, 39, 40];
             document.body.addEventListener('keydown', event => {        //keycode를 읽어야하므로 event씀
                 switch(event.keyCode) {
+                case 0x48:               // h
                 case left:
                     x -= 1; break;  //x-- 가능
+                case 0x4b:               // k
                 case up:
                     y -= 1; break;
+                case 0x4c:               // l
                 case right:
                     x += 1; break;
+                case 0x4a:               // j
                 case down:
                     y += 1; break;
                 }
