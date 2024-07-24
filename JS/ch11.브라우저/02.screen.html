@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen 객체</title>
+    <script>
+        window.onload = () => {
+            let attr = `width: ${screen.width}<br>`;    // 동작하는 screen전체의 width
+            attr += `height: ${screen.height}<br>`;
+            attr += `availWidth: ${screen.availWidth}<br>`; //availWidth는 그안에서 실제? width
+            attr += `availHeight: ${screen.availHeight}<br>`;
+            attr += `colorDepth: ${screen.colorDepth}<br>`;     //color 가 24bit라는건 RGB 8씩
+            attr += `pixelDepth: ${screen.pixelDepth}<br>`;
+            document.querySelector('h3').innerHTML = attr;
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h3></h3>
+    
+</body>
+</html>
