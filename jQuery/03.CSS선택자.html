@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            // fruits id 값인 애에서 class(.)가 national인 애를 찾아(find). 걔의 CSS를 ~
+            $('#fruits').find('.national').css('backgroundColor', 'yellow');
+            // 띄어쓰기 하나 하고 .foreign하면 됨(자손으로)
+            $('#fruits .foreign').css('color', 'red');
+            $('.foreign').css('backgroundColor', 'skyblue');
+            $('span').css('fontSize', '1.5rem');
+            $('li').css('padding', '3px');
+            // js DOM에서 04.문서객체선택에서 h1 array를 선택해서 하나하나 찾아서 했지만
+            // jQuery에서는 class 통채로 교체 됨
+
+            $('#foods > li:nth-child(2)').css('fontWeight', 'bold');
+            // f12눌러서 원하는 부분(불고기)가서 해당 코드 우클릭,
+            // 카피 셀렉터 하면 위에꺼(#foods > li:nth-child(2)) 나옴
+            $('#foods > li:nth-child(4)').css('backgroundColor', 'cyan');
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <ul id="fruits"><span>내가 좋아하는 과일</span>
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <ul id="foods"><span>내가 좋아하는 음식</span>
+        <li class="national">불고기</li>
+        <li class="foreign">파스타</li>
+        <li class="national">김치찌개</li>
+    </ul>
+</body>
+</html>
