@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(jQuery)생성순서 오류 해결 2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(() => {
+        $('body > h1:nth-child(1)').css('color', 'red');
+        $('body').css('backgroundColor', 'yellow');
+    })
+    </script>
+</head>
+<body>    
+    <h1>Header 1</h1>
+    <h1>Header 2</h1>
+</body>
+</html>

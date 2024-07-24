@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체 선택</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        function handler() {
+            // 첫번째 h1 태그의 배경색을 yellow로
+            document.querySelector('h1').style.backgroundColor = 'yellow';
+
+            // 모든 h1 태그의 글자색을 red로. array로 만들어서 반복문 써야함.
+            // 네개 전부 선택하는 법. array로 만들기
+            let h1Array = document.querySelectorAll('h1');
+            for (let h1 of h1Array)
+                h1.style.color = 'red';
+
+            // class가 header1인 요소의 배경색을 아쿠아로
+            let header1Array = document.querySelectorAll('.header1');
+            for (let h1 of header1Array)
+                h1.style.backgroundColor = 'aqua';
+
+            // id가 header1인 요소의 텍스트를 From Javascript로 변경
+            // 내부 텍스트를 바꾸는거라서 innerHTML
+            // '#header1'대신 getElementById로 해서 할 수 있다.
+            document.querySelector('#header1').innerHTML = 'From Javascript';
+
+            // 모든 글자의 크기를 2배로
+            document.body.style.fontSize = '2rem';
+
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1>Header No.1</h1>    <!-- h1.header1 tap하면 아래처럼 h1class이름 header1됨 -->
+    <h1 class="header1">Header No.2</h1>
+    <h1 id="header1">Header No.3</h1>   <!-- h1#header1 하면 id값이 header1됨-->
+    <h1 class="header1">Header No.4</h1>
+    <button onclick="handler()">실행</button>
+</body>
+</html>
