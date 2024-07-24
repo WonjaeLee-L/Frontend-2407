@@ -8,7 +8,27 @@
     <script>
         $(document).ready(() => {
             let lis = $('li');
-        });
+            for (let i = 0; i < lis.length; i++ ) {
+                if (i % 2 == 1) {       // 두번째, 네번째, 여섯번째
+                    let li = lis.get(i);    // let li = lis[i]; 로도 된다.
+                    $(li).css('backgroundColor', 'yellow');
+                }
+            }
+            // each 쓰면 반복문 (index, element)
+            $('li').each((index, element) => {
+                if (index % 2 == 0) 
+                    $(element).css('color', 'red');
+                else
+                    $(element).css('fontWeight', 'bold');
+
+                });
+                $('span').each(function(index, _) {     // 화살표 함수에서는 this 사용 x
+                    if (index % 2 == 0)
+                        $(this).css('fontSize', '1.5rem');
+                    else
+                        $(this).css('fontWeight', 'bold');
+                });
+            });
     </script>
 </head>
 <body style="margin: 40px;">

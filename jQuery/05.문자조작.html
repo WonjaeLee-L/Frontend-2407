@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자조작</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+            alert($('#first').text());  // text만 가져옴
+            alert($('#first').html());  // text와 안에 있는 태그도 가져옴
+            alert($('h1').text());      // 모든 h1 태그의 text를 가져옴
+            alert($('h1').html());      // 첫번째 h1 태그의 text와 안에 있는 태그를 가져옴
+            // $('h1').text('text() 메소드로 <span style = "color: red;">변경</span>'); // 모든 h1 태그의 text가 변경이 되나, 태그는 반영안됨.
+            $('h1').html('text() 메소드로 <span style = "color: red;">변경</span>');    // 위와 같고, 태그 반영됨.
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="first">First<span style="color: brown;">Header</span></h1>
+    <h1>Second <span style="color: brown;">Header</span></h1>
+    <h1>Third Header</h1>
+</body>
+</html>
