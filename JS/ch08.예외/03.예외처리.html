@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예외 처리</title>
+    <script> // error가 날지도 모르는 코드를 try안에 넣어
+            // 시스템이 죽지 않고 에러가 났다는 사실만 알려줌
+        console.log('프로그램이 시작되었습니다.');
+        try {
+            console.rog('괄호를 닫지 않는 실수를 저질렀습니다.');            
+        } catch (error) {
+            console.log('에러가 발생을 했습니다.');
+            console.log(error.name);        // 어떤 에러인지
+            console.log(error.message);     // 에러 내용
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
