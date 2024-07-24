@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이원재</title>
+    <style>
+        img { width: 50px; }
+        .date-container {
+            display: flex;
+            align-items: center;
+        }
+        .date-container img {
+            margin-right: 5px;
+        }
+        .date-container span {
+            font-size: 40px;
+            color: tomato;
+            font-weight: bolder;
+        }
+        .time-container {
+            display: flex;
+            align-items: center;
+        }
+        .time-container img {
+            margin-right: 5px;
+            width: 75px;
+        }
+    </style>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);
+        }
+        function myDate(now) {
+            const week = '일월화수목금토'.split('');
+            return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay() % 7]})`;
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+        window.onload = () => {
+            setInterval(() => {
+                let now = new Date();
+                let dateStr = myDate(now);
+
+                document.getElementById('y1').src = `img/${dateStr[0]}.svg`;
+                document.getElementById('y2').src = `img/${dateStr[1]}.svg`;
+                document.getElementById('y3').src = `img/${dateStr[2]}.svg`;
+                document.getElementById('y4').src = `img/${dateStr[3]}.svg`;
+                document.getElementById('mo1').src = `img/${dateStr[5]}.svg`;
+                document.getElementById('mo2').src = `img/${dateStr[6]}.svg`;
+                document.getElementById('d1').src = `img/${dateStr[8]}.svg`;
+                document.getElementById('d2').src = `img/${dateStr[9]}.svg`;
+                document.getElementById('yoil1').textContent = dateStr[10];
+                document.getElementById('yoil2').textContent = dateStr[11];
+                document.getElementById('yoil3').textContent = dateStr[12];
+
+                let timeStr = myTime(now);
+                document.getElementById('h1').src = `img/${timeStr[0]}.svg`;
+                document.getElementById('h2').src = `img/${timeStr[1]}.svg`;
+                document.getElementById('m1').src = `img/${timeStr[3]}.svg`;
+                document.getElementById('m2').src = `img/${timeStr[4]}.svg`;
+                document.getElementById('s1').src = `img/${timeStr[6]}.svg`;
+                document.getElementById('s2').src = `img/${timeStr[7]}.svg`;
+            }, 1000);
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <div class="date-container">
+        <img id="y1">
+        <img id="y2">
+        <img id="y3">
+        <img id="y4">
+        <img src="img/Colon.jpg">
+        <img id="mo1">
+        <img id="mo2">
+        <img src="img/Colon.jpg">
+        <img id="d1">
+        <img id="d2">
+        <span id="yoil1"></span>
+        <span id="yoil2"></span>
+        <span id="yoil3"></span>
+    </div>
+    <hr><br>
+    <div class="time-container">
+        <img id="h1">
+        <img id="h2">
+        <img src="img/Colon.jpg">
+        <img id="m1">
+        <img id="m2">
+        <img src="img/Colon.jpg">
+        <img id="s1">
+        <img id="s2">
+    </div>
+</body>
+</html>

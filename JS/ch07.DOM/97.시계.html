@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이원재</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .clock-container {
+            text-align: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        .date-container, .time-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 50px;
+        }
+        .date-container {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .date-container .date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .date-container .day {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+        }
+        .date-container .date span {
+            font-size: 30px;
+            color: rgb(255, 2, 141);
+            font-weight: bolder;
+        }
+        .time-container img {
+            width: 60px;
+        }
+        .date-container img, .time-container img {
+            margin-right: 5px;
+        }
+        .time-container .colon {
+            display: block;
+        }
+    </style>
+    <script>
+        function twoDigit(num) {
+            return num < 10 ? '0' + num : String(num);
+        }
+        function myDate(now) {
+            const week = '일요일,월요일,화요일,수요일,목요일,금요일,토요일'.split(',');
+            return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay()]})`;
+        }
+        function myTime(now) {
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
+        }
+        window.onload = () => {
+            setInterval(() => {
+                let now = new Date();
+                let dateStr = myDate(now);
+
+                document.getElementById('y1').src = `img/${dateStr[0]}.svg`;
+                document.getElementById('y2').src = `img/${dateStr[1]}.svg`;
+                document.getElementById('y3').src = `img/${dateStr[2]}.svg`;
+                document.getElementById('y4').src = `img/${dateStr[3]}.svg`;
+                document.getElementById('mo1').src = `img/${dateStr[5]}.svg`;
+                document.getElementById('mo2').src = `img/${dateStr[6]}.svg`;
+                document.getElementById('d1').src = `img/${dateStr[8]}.svg`;
+                document.getElementById('d2').src = `img/${dateStr[9]}.svg`;
+                document.getElementById('yoil').textContent = dateStr[11] + dateStr[12] + dateStr[13];
+
+                let timeStr = myTime(now);
+                document.getElementById('h1').src = `img/${timeStr[0]}.svg`;
+                document.getElementById('h2').src = `img/${timeStr[1]}.svg`;
+                document.getElementById('m1').src = `img/${timeStr[3]}.svg`;
+                document.getElementById('m2').src = `img/${timeStr[4]}.svg`;
+                document.getElementById('s1').src = `img/${timeStr[6]}.svg`;
+                document.getElementById('s2').src = `img/${timeStr[7]}.svg`;
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="date-container">
+            <div class="date">
+                <img id="y1">
+                <img id="y2">
+                <img id="y3">
+                <img id="y4">
+                <img src="img/Colon.jpg" class="colon">
+                <img id="mo1">
+                <img id="mo2">
+                <img src="img/Colon.jpg" class="colon">
+                <img id="d1">
+                <img id="d2">
+            </div>
+            <div class="day" id="yoil"></div>
+        </div>
+        <div class="time-container">
+            <img id="h1">
+            <img id="h2">
+            <img src="img/Colon.jpg">
+            <img id="m1">
+            <img id="m2">
+            <img src="img/Colon.jpg">
+            <img id="s1">
+            <img id="s2">
+        </div>
+    </div>
+</body>
+</html>
