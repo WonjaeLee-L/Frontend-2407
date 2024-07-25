@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성조작</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        // 속성은 attr로 정함. css처럼 하나씩 하거나 object형태로 여러개 한번에 속성 줄 수 있다.
+        $(document).ready(() => {
+            $('#image').attr({
+                src: 'https://picsum.photos/320/160', 
+                alt: '랜덤 이미지입니다.',
+                width: 640, height: 320,
+            }).css('borderRadius', '10px');
+
+            let width = $('#image').attr('width');
+            let height = $('#image').attr('height');
+            let alt = $('image').attr('alt');
+            let info = `width: ${width}, height: ${height}, alt: ${alt}`;
+            $('h3').html(info);
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <img id="image">
+    <h3></h3>
+</body>
+</html>
