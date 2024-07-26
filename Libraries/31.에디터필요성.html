@@ -15,7 +15,17 @@
     </style>
     <script>
         function show() {
-            $('#result').html($('#content').val())  //content에서 읽은 글을 result에 출력
+            let content = $('#content').val();
+            let changeContent = '';
+            for (let i = 0; i < content.length; i++) {
+                if (content.charAt(i) == '\n')
+                    changeContent += '<br>';
+                else
+                    changeContent += content.charAt(i);
+            }
+            $('#result').html(changeContent);  //content에서 읽은 글을 result에 출력
+            $('#update').val(content);   //val로 하니까 줄바꿈이 다 적용되어서 출력됨
+            $('#readonly').val(content);
         }
     </script>
 
@@ -31,11 +41,18 @@
             <div class="col-3"></div>
             <div class="col-6">
                 <p>글 입력</p>
-                <textarea id="content" rows="10" class="form-control"></textarea>
+                <textarea id="content" rows="5" class="form-control"></textarea>
                 <button class="btn btn-primary mx-auto mt-3" onclick="show()">확인</button>
                 <hr>
-                <p>읽은 글 출력</p>
+                <p>글 읽기</p>
                 <p id="result"></p>
+                <hr>
+                <p>글 수정(줄바꿈이 다 적용되어서 출력 됨)</p>
+                <textarea id="update" rows="5" class="form-control"></textarea>
+                <hr>
+                <p>readonly 글 읽기</p>
+                <textarea id="readonly" rows="5" class="form-control" readonly></textarea>
+
             </div>
 
             <div class="col-3"></div>
