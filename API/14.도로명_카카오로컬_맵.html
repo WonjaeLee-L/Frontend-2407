@@ -10,16 +10,15 @@
             const kakaoScript = document.createElement('script');
             kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false`;
             kakaoScript.onload = () => {
-                kakao.maps.load(() => {
-                    initializeMap();
-                });
+                kakao.maps.load(() => { }); //지금 이 코드는 하는일 없음.
             };
             document.head.appendChild(kakaoScript);
 
+            let place = '경기도청';
             let roadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
             let kakaoBaseUrl = 'https://dapi.kakao.com/v2/local/search/address.json';
             let params1 = 'currentPage=1&countPerPage=5';
-            let params2 = `keyword=${encodeURIComponent('수원시청')}`;  //한글은 반드시 인코딩 해야함
+            let params2 = `keyword=${encodeURIComponent(place)}`;  //변수니까 ''빼고 입력
             let params3 = `confmKey=${roadAddrKey}&resultType=json`;
             let roadUrl = `${roadBaseUrl}?${params1}&${params2}&${params3}`;
             // parameter는 ?로 시작후 &로 연결
@@ -43,7 +42,7 @@
                             document.getElementById('lat').innerHTML = '' + lat;
                             document.getElementById('lon').innerHTML = String(lon); // 위의 ''과 같다
 
-                            drawMap('수원시청', lat, lon);
+                            drawMap('place', lat, lon);
                         })
                         .catch(error => {
                             console.log(error);
@@ -54,7 +53,9 @@
             // document.querySelector('p').innerHTML = url;
         };
 
+
         function drawMap(place, lat, lon) {
+            // console.log(place, lat, lon);
             let container = document.getElementById('map');
             let position = new kakao.maps.LatLng(lat, lon);
             let options = { 
@@ -87,7 +88,7 @@
 <body style="margin: 40px;">
     <h1>도로명주소 API +  카카오 로컬 API + 지도</h1>
     <hr>
-    <h3>수원시청</h3>
+    <h3>경기도청</h3>
     <ul>
         <li>도로명주소: <span id="place"></span></li>
         <li>위도: <span id="lat"></span></li>
