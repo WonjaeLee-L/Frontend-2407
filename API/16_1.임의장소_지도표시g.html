@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>주소 검색</title>
+    <style>
+        #map {
+            height: 600px;
+            width: 200%;
+        }
+        #searchForm {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h1>주소 검색</h1>
+    <form id="searchForm">
+        <input id="address" type="text" placeholder="주소를 입력하세요">
+        <button type="submit">지도 그리기</button>
+    </form>
+    <ul>
+        <li>도로명주소: <span id="place"></span></li>
+        <li>위도: <span id="lat"></span></li>
+        <li>경도: <span id="lon"></span></li>
+    </ul>    
+    <div id="map" style="margin-top: 20px;width:600px;height:400px;"></div>
+    
+    <script src="key.js"></script>
+    <script>
+        window.onload = () => {
+            const kakaoScript = document.createElement('script');
+            kakaoScript.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false`;
+            kakaoScript.onload = () => {
+                kakao.maps.load(() => { 
+                });
+            };
+            document.head.appendChild(kakaoScript);
+            
+            document.getElementById('searchForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const place = document.getElementById('address').value;
+                fetchAddress(place);
+            });
+        };
+
+        function fetchAddress(place) {
+            let kakaoBaseUrl = 'https://dapi.kakao.com/v2/local/search/address.json';
+            let kakaoUrl = `${kakaoBaseUrl}?query=${encodeURIComponent(place)}`;
+            let header = { Authorization: `KakaoAK ${kakaoRestKey}` };
+
+            fetch(kakaoUrl, { headers: header })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.documents.length > 0) {
+                        let addressInfo = result.documents[0];
+                        let lat = parseFloat(addressInfo.y);
+                        let lon = parseFloat(addressInfo.x);
+                        document.getElementById('place').innerHTML = addressInfo.address_name;
+                        document.getElementById('lat').innerHTML = lat;
+                        document.getElementById('lon').innerHTML = lon;
+
+                        drawMap(addressInfo.address_name, lat, lon);
+                    } else {
+                        alert('주소를 찾을 수 없습니다.');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+        function drawMap(place, lat, lon) {
+            let container = document.getElementById('map');
+            let position = new kakao.maps.LatLng(lat, lon);
+            let options = { 
+                center: position,
+                level: 3
+            }; 
+
+            let map = new kakao.maps.Map(container, options);
+
+            // 마커 생성
+            let marker = new kakao.maps.Marker({
+                map: map,
+                position: position
+            });
+
+            // 인포 윈도우 생성
+            let infowindow = new kakao.maps.InfoWindow({
+                content : `<div style="padding:5px;">${place}</div>`
+            });
+            kakao.maps.event.addListener(marker, 'mouseover', () => {
+                infowindow.open(map, marker);
+            });
+            kakao.maps.event.addListener(marker, 'mouseout', () => {
+                infowindow.close();
+            });
+        }
+    </script>
+</body>
+</html>
