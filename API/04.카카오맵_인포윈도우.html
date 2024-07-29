@@ -39,10 +39,10 @@
             // 마우스오버 이벤트, 마우스아웃 이벤트
             kakao.maps.event.addListener(marker, 'mouseover', () => {
                 infowindow.open(map, marker);
-            })
+            });
             kakao.maps.event.addListener(marker, 'mouseout', () => {
                 infowindow.close();
-            })
+            });
 
         }
 
