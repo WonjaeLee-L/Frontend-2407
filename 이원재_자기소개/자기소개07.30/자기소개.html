@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 5 Personal Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/876cee0f64.js" crossorigin="anonymous"></script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=27b87e379c8004a568d56ccf9d317201"></script>
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        a { text-decoration: none; color: inherit;} 
+        th { text-align: center; width: 14.28%; }
+        td { height: 120px; }
+        #map { width: 100%; height: 400px; }
+        .sidebar { height: calc(100vh - 60px); width: 250px; position: fixed; top: 60px; left: 0;
+                    background-color: #343a40; color: white; padding-top: 20px; }
+        .sidebar a { color: white; padding: 15px; display: block; text-decoration: none; }
+        .sidebar a:hover { background-color: #495057; }
+        .content { margin-left: 250px; padding: 20px; margin-top: 56px; }
+        .navbar-custom { background-color: #343a40; }
+        .footer-custom { background-color: #343a40; color: white; }
+        .edit-container { margin-top: 20px; padding: 15px; background-color: #495057; }
+        .edit-container input { width: calc(100% - 90px); margin-right: 10px; }
+    </style>
+    </head>
+    <body style="background-color: darkgrey;">
+
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-custom fixed-top">
+        <div class="container-fluid justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item ms-3"><h2 style="color: white; font-size: 30px;">
+                나를 소개합니다. 이원재</h2>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <img src="img/myphoto.png" class="rounded-circle mx-auto d-block" 
+        alt="Basic image" width="80" style="margin-bottom: 20px;">
+        <h3 id="sidebarTitle" style="text-align: center;">이원재
+        <button class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#editSidebar">
+            수정
+        </button></h3>
+        
+        <h2><a href="https://github.com/WonjaeLee-L" target="_blank">
+            <i class="fa-brands fa-github">&nbsp;&nbsp;&nbsp;github</i></a></h2>
+        <h2 style="text-align: center;"><a href="#birthplace">태어난 곳</a></h2>
+        <h2 style="text-align: center;"><a href="#travel">가봤던 곳</a></h2>
+        <h2 style="text-align: center;"><a href="#food">먹고 싶은 것</a></h2>
+        <h2 style="text-align: center;"><a href="#hobby">하고 싶은 것</a></h2>
+        
+    </div>
+        <div class="offcanvas offcanvas-end" id="editSidebar" tabindex="-1">
+        <div class="offcanvas-header">
+        <h5 class="offcanvas-title">내용을 입력하세요</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body edit-container">
+        <input type="text" id="newTitle" placeholder="내용 입력">
+        <button class="btn btn-primary" onclick="updateTitle()">수정</button>
+    </div>
+    </div>
+
+    <div class="content">
+        <section id="birthplace" class="my-5">
+        <h2>내가 태어난 곳</h2>
+        <div id="map"></div>
+        <p>저는 1991년, 서울시 양천구 소재의 병원에서 태어났습니다.수원으로 온지는 2년정도 지나서
+            아직 익숙하지는 않지만, 서울처럼 사람이 너무 많지 않아서 좋고
+            무엇보다 집 근처에 호수공원과 저수지가 많이 있어서 살기에 좋습니다.</p>
+        </section>
+
+        <section id="travel" class="my-5">
+        <h2>내가 가봤던 곳</h2>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="img/sydney.jpg" alt="Sydney Opera House">
+                <div class="card-body">
+                <h4 class="card-title">오페라하우스</h4>
+                <p class="card-text">해외의 가봤던 곳은 호주의 시드니 오페라하우스입니다. 
+                    맛있는 음식도 많이 먹고 여유롭게 관광을 했던 행복한 기억이 남아있습니다.</p>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="img/south.png" alt="Namhansanseong">
+                <div class="card-body">
+                <h4 class="card-title">남한산성</h4>
+                <p class="card-text">해외보다는 국내 여행을 자주 가곤하는데, 사진은 작년에
+                    남한산성에 갔을 때의 사진입니다. 조금은 더운 날씨였지만 날이 맑아서 경치가
+                    매우 좋았습니다. 여행갔을 때의 사진을 보면, 여행을 하고있는 것 같은 기분이 들어서
+                    스트레스가 풀립니다. 그래서 종종 여행지의 사진을 보며 시간을 보냅니다.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <section id="food" class="my-5">
+        <h2>내가 먹고 싶은 것</h2>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="img/food.png" alt="Gopchang">
+                <div class="card-body">
+                <h4 class="card-title">곱창</h4>
+                <p class="card-text">먹고싶은 음식은 곱창입니다. 최근에는 망포동 소재의 정철 황소곱창을
+                    자주 방문합니다. 곱창은 언제 먹어도 질리지 않는 저의 최애 음식입니다.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <section id="hobby" class="my-5">
+        <h2>내가 하고 싶은 것</h2>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="img/bicycle.png" alt="Bicycle">
+                <div class="card-body">
+                <h4 class="card-title">자전거</h4>
+                <p class="card-text">저는 자전거타는 것을 좋아합니다. 보통 집에서 광교호수공원까지
+                    자전거를 타고 가서 공원에서 시간을 보내다가 돌아오곤합니다.</p>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="img/ebicycle.png" alt="Electric Bicycle">
+                <div class="card-body">
+                <h4 class="card-title">전기자전거</h4>
+                <p class="card-text">최근에는 전기 자전거를 자주 이용합니다. 자전거보다 힘이 덜
+                    들어가면서도 더 빠른 속력으로 달릴 수 있어서 좋습니다.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+    </div>
+
+    <footer class="footer-custom text-center py-3 fixed-bottom">
+        <p>문의사항&nbsp;<i class="fa-solid fa-phone"></i>&nbsp;010-2818-2716</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        let mapContainer = document.getElementById('map');
+        let mapOption = { 
+            center: new kakao.maps.LatLng(37.51423056, 126.8687083),
+            level: 3 
+        }; 
+        let map = new kakao.maps.Map(mapContainer, mapOption); 
+
+        let markerPosition  = new kakao.maps.LatLng(37.51423056, 126.8687083); 
+        let marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map);
+
+        let infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="padding:5px;"> 서울시 양천구 !!</div>'
+        });
+        infowindow.open(map, marker);
+        });
+        function updateTitle() {
+            var newTitle = document.getElementById('newTitle').value;
+            document.getElementById('sidebarTitle').innerText = newTitle;
+            var offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('editSidebar'));
+            offcanvas.hide();
+        }
+    </script>
+    
+</body>
+</html>
